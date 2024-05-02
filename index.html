@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- 
+      Подключение стилей
+      сначала стили Swiper
+      затем основные  
+    -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <!-- HEADER начало -->
+    <header class="header">
+      <div class="header_wrapper">
+        <div class="header-burger">
+          <button class="burder-btn"></button>
+        </div>
+        <div class="header_info-panel">
+          <div class="menu_parameters">
+            <span class="menu_parameters_top-line"></span>
+            <span class="menu_parameters_bottom-line"></span>
+            По параметрам
+          </div>
+          <div class="menu_pick">5</div>
+          <div class="menu_phone">
+            <a href="tel:+74950000000">+7 495 000 00 00</a>
+          </div>
+        </div>
+      </div>
+      <div class="header_info-area">Пентхаусы</div>
+    </header>
+    <!-- HEADER конец -->
+
+    <!-- Основная секция -->
+    <section class="section section-view1">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/buildView1Mini.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/buildView2Mini.png" />
+          </div>
+        </div>
+      </div>
+      <div class="section_btn-box">
+        <button class="prev-slide">Вид-2</button>
+        <div class="btn-box_img">
+          <img src="./img/arrows.png" alt="arrows" />
+        </div>
+        <button class="next-slide next-slide--active">Вид-1</button>
+      </div>
+      <div class="section_streets">
+        <img src="./img/streetsMini.png" alt="" />
+      </div>
+      <div class="section_star">
+        <svg
+          class="section_star-svg"
+          id="star"
+          width="57"
+          height="57"
+          viewBox="0 0 57 57"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M23.243 33.578L2.89721 27.6939L23.6034 23.2577L29.4879 2.89769L33.9379 23.6186L54.2842 29.4884L33.5775 33.9388L27.6934 54.2846L23.243 33.578Z"
+            stroke="black"
+            stroke-miterlimit="10"
+          />
+          <path
+            d="M36.5341 33.1557L42.3659 43.3635L32.5898 36.8339"
+            stroke="black"
+            stroke-miterlimit="10"
+          />
+          <path
+            d="M20.6465 24.0269L14.8147 13.8192L24.5903 20.3631"
+            stroke="black"
+            stroke-miterlimit="10"
+          />
+          <path
+            d="M24.0246 36.5363L13.8169 42.3681L20.3465 32.592"
+            stroke="black"
+            stroke-miterlimit="10"
+          />
+          <path
+            d="M33.1553 20.6606L43.3635 14.8146L36.8339 24.5906"
+            stroke="black"
+            stroke-miterlimit="10"
+          />
+          <path
+            d="M24.3075 28.4422C24.2249 30.8072 26.0751 32.7913 28.4402 32.8739C30.8052 32.9565 32.7894 31.1062 32.8719 28.7412C32.9545 26.3762 31.1043 24.392 28.7392 24.3094C26.3742 24.2269 24.39 26.0771 24.3075 28.4422Z"
+            stroke="black"
+            stroke-miterlimit="10"
+          />
+        </svg>
+        <svg
+          class="c-top"
+          width="9"
+          height="11"
+          viewBox="0 0 9 11"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.16951 2.4821C6.62919 0.689749 3.92318 0.485102 2.13082 2.02542C0.338468 3.56573 0.133822 6.27175 1.67414 8.0641C3.21445 9.85646 5.92047 10.0611 7.71282 8.52079"
+            stroke="black"
+            stroke-miterlimit="10"
+          />
+        </svg>
+        <svg
+          class="c-right c-right--active"
+          width="9"
+          height="11"
+          viewBox="0 0 9 11"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.16951 2.4821C6.62919 0.689749 3.92318 0.485102 2.13082 2.02542C0.338468 3.56573 0.133822 6.27175 1.67414 8.0641C3.21445 9.85646 5.92047 10.0611 7.71282 8.52079"
+            stroke="black"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
+
+      <!-- Боковой выбор квартир -->
+      <nav class="section_nav">
+        <ul class="section_nav-list">
+          <li id="penthause" class="section_nav-item section_nav-item--active">
+            Пентхаусы
+          </li>
+          <li id="apartament" class="section_nav-item">Квартиры</li>
+          <li id="cityhouse" class="section_nav-item">Ситихаусы</li>
+          <li id="villa" class="section_nav-item">Виллы</li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Окончание основной секции -->
+
+    <!--Окошко подсказка по квартирам -->
+    <div class="apartaments-tip">
+      <div class="apartaments-tip_floor">4 этаж</div>
+      <div class="apartaments-tip_number">
+        <h3 class="apartaments-tip_title apartaments-tip_title-number">
+          3 квартиры
+        </h3>
+        <span class="apartaments-tip_small">в продаже</span>
+      </div>
+      <div class="apartaments-tip_square">
+        <h3 class="apartaments-tip_title apartaments-tip_title-square">
+          от 120 м<sup>2</sup>
+        </h3>
+        <span class="apartaments-tip_small">площадь</span>
+      </div>
+      <div class="apartaments-tip_price">
+        <h3 class="apartaments-tip_title apartaments-tip_title-price">
+          от 310 000 000 &#8381;
+        </h3>
+        <span class="apartaments-tip_small">стоимость</span>
+      </div>
+    </div>
+
+    <!-- 
+      Подключение скриптов 
+      сначала скрипт swiper 
+      затем основной
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

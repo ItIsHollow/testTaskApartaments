@@ -1,0 +1,470 @@
+/* font-size: calc( (100vw - Vmin)/(Vmax - Vmin) * (Fmax - Fmin) + Fmin); */
+/* Шрифты */
+@font-face {
+  font-family: "Galatea";
+  src: local("Galatea Thin"), local("Galatea-Thin"),
+    url("./../fonts/Galatea-Thin.woff2") format("woff2"),
+    url("./../fonts/Galatea-Thin.woff") format("woff"),
+    url("./../fonts/Galatea-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Galatea";
+  src: local("Galatea ExtraLight"), local("Galatea-ExtraLight"),
+    url("./../fonts/Galatea-ExtraLight.woff2") format("woff2"),
+    url("./../fonts/Galatea-ExtraLight.woff") format("woff"),
+    url("./../fonts/Galatea-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Galatea";
+  src: local("Galatea Light"), local("Galatea-Light"),
+    url("./../fonts/Galatea-Light.woff2") format("woff2"),
+    url("./../fonts/Galatea-Light.woff") format("woff"),
+    url("./../fonts/Galatea-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Galatea";
+  src: local("Galatea Regular"), local("Galatea-Regular"),
+    url("./../fonts/Galatea-Regular.woff2") format("woff2"),
+    url("./../fonts/Galatea-Regular.woff") format("woff"),
+    url("./../fonts/Galatea-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Общие стили сброс */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: "Galatea", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Стили для header */
+.header {
+  position: relative;
+  background-color: #f0ede8;
+  width: 100%;
+  height: 95px;
+  padding-left: 43px;
+  padding-right: 120px;
+  display: flex;
+  align-items: center;
+}
+
+/* Надпись в центре  */
+.header_info-area {
+  position: absolute;
+  height: 105px;
+  width: 25%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 12px 12px;
+  /* font-size: 26px; */
+  font-size: calc((100vw - 360px) / (1726 - 360) * (26 - 16) + 16px);
+  color: #ad8361;
+  z-index: 5;
+  font-weight: 400;
+}
+
+.header_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_info-panel {
+  display: flex;
+  flex-basis: 30%;
+  gap: 10px;
+  justify-content: space-between;
+  font-weight: 200;
+}
+
+/* Надпись по параметрам и вся анимация до неё */
+@keyframes moveTopCircle {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes moveBottomCircle {
+  0% {
+    transform: translateX();
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+.menu_parameters {
+  /* font-size: 20px; */
+  font-size: calc((100vw - 360px) / (1726 - 360) * (20 - 12) + 12px);
+  line-height: 22px;
+  padding-left: 34px;
+  position: relative;
+  cursor: pointer;
+}
+.menu_parameters:hover.menu_parameters::before,
+.menu_parameters:hover.menu_parameters::after {
+  animation-play-state: running;
+}
+.menu_parameters::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  border: 1px solid #ad8361;
+  border-radius: 50%;
+  background-color: #f0ede8;
+  left: 2px;
+  top: 1px;
+  z-index: 1;
+  /* animation */
+  animation-name: moveTopCircle;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+}
+.menu_parameters::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  border: 1px solid #ad8361;
+  border-radius: 50%;
+  background-color: #f0ede8;
+  left: 13px;
+  bottom: 1px;
+  z-index: 1;
+  /* animation */
+  animation-name: moveBottomCircle;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+}
+
+.menu_parameters_top-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: #ad8361;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+.menu_parameters_bottom-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: #ad8361;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+}
+
+/* Сердечко и телефон */
+.menu_pick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 22px;
+  font-size: 12px;
+  line-height: 14px;
+  color: #fff;
+  background-image: url("./../img/heart.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.menu_phone {
+  /* font-size: 20px; */
+  font-size: calc((100vw - 360px) / (1726 - 360) * (20 - 12) + 12px);
+  line-height: 22px;
+}
+
+/* Кнопка бургер */
+.header-burger {
+  width: 45px;
+  height: 10px;
+}
+
+.burder-btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.burder-btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background-color: #000;
+}
+
+.burder-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+}
+
+/* Section */
+.section {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* height: 100vh; */
+  height: calc(100vh - 95px);
+  padding-top: 67px;
+  padding-bottom: 68px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Задний фон */
+.section-view1 {
+  background-image: url("./../img/back1MiniMini.webp");
+  opacity: 1;
+}
+
+.section-view2 {
+  background-image: url("./../img/back2MiniMini.webp");
+  opacity: 1;
+}
+
+/* Стили для изменения свайпера */
+.swiper {
+  position: relative;
+  /* width: 994px; */
+  width: 57.5%;
+  /* height: 671px; */
+  height: 100%;
+  padding: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 994px;
+  height: 671px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+/* Кнопки управления слайдами */
+.section_btn-box {
+  position: absolute;
+  width: 100px;
+  top: 68px;
+  right: 120px;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: c;
+}
+
+.prev-slide {
+  background-color: transparent;
+  opacity: 0.7;
+  font-size: 22px;
+  transition: 0.3s;
+  line-height: 35px;
+}
+.prev-slide--active {
+  opacity: 1;
+  font-size: 35;
+}
+
+.next-slide {
+  background-color: transparent;
+  font-size: 22px;
+  opacity: 0.7;
+  transition: 0.3s;
+  line-height: 35px;
+}
+.next-slide--active {
+  opacity: 1;
+  font-size: 35px;
+}
+
+/* Картинка улиц и компас */
+.section_streets {
+  position: absolute;
+  bottom: 5px;
+  right: 58px;
+  width: 300px;
+  transform: rotate(0);
+  transition: transform 0.3s ease-in-out;
+}
+.section_streets img {
+  width: 100%;
+}
+.section_streets--rotate {
+  transform: rotate(-90deg);
+}
+
+.section_star {
+  position: absolute;
+  bottom: 40px;
+  right: 355px;
+}
+.section_star-svg {
+  transition: 0.3s;
+  transform: rotate(10deg);
+}
+.section_star-svg--rotate {
+  transform: rotate(-90deg);
+}
+.c-top {
+  position: absolute;
+  top: -12px;
+  right: 38%;
+  opacity: 0;
+  transition: 0.2s;
+}
+.c-top--active {
+  opacity: 1;
+}
+.c-right {
+  position: absolute;
+  right: -12px;
+  top: 40%;
+  opacity: 0;
+  transition: 0.2s;
+}
+.c-right--active {
+  opacity: 1;
+}
+
+/* Боковая навиагация */
+.section_nav {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  /* width: 207px; */
+  width: 12%;
+  height: 180px;
+  background-color: #fff;
+  border-radius: 0 15px 15px 0;
+  font-weight: 300;
+}
+
+.section_nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0 15px 15px 0;
+  overflow: hidden;
+}
+
+.section_nav-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-basis: 25%;
+  font-size: calc((100vw - 360px) / (1726 - 360) * (18 - 12) + 12px);
+  padding-left: 20px;
+  transition: 0.2s;
+}
+
+.section_nav-item:not(:last-child) {
+  border-bottom: 1px solid #ad8361;
+}
+
+.section_nav-item--active {
+  background-color: #ad8361;
+  color: #fff;
+}
+
+/* Окошко подсказка по квартирам */
+.apartaments-tip {
+  position: absolute;
+  padding: 30px 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  z-index: 10;
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.apartaments-tip_floor {
+  color: #ad8361;
+  font-size: 26px;
+  line-height: 25px;
+  border-bottom: 1px solid #ad8361;
+  padding-bottom: 15px;
+}
+
+.apartaments-tip_title {
+  /* font-size: 26px; */
+  font-size: calc((100vw - 360px) / (1726 - 360) * (26 - 13) + 13px);
+  line-height: 27px;
+  font-weight: 400;
+}
+.apartaments-tip_small {
+  /* font-size: 16px; */
+  font-size: calc((100vw - 360px) / (1726 - 360) * (16 - 8) + 8px);
+  line-height: 22px;
+  /* opacity: 0.9; */
+  font-weight: 100;
+}
