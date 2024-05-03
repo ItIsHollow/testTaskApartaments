@@ -1,41 +1,69 @@
 /* font-size: calc( (100vw - Vmin)/(Vmax - Vmin) * (Fmax - Fmin) + Fmin); */
 /* Шрифты */
 @font-face {
-  font-family: "Galatea";
-  src: local("Galatea Thin"), local("Galatea-Thin"),
-    url("./../fonts/Galatea-Thin.woff2") format("woff2"),
-    url("./../fonts/Galatea-Thin.woff") format("woff"),
-    url("./../fonts/Galatea-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Galatea";
-  src: local("Galatea ExtraLight"), local("Galatea-ExtraLight"),
-    url("./../fonts/Galatea-ExtraLight.woff2") format("woff2"),
-    url("./../fonts/Galatea-ExtraLight.woff") format("woff"),
-    url("./../fonts/Galatea-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Galatea";
-  src: local("Galatea Light"), local("Galatea-Light"),
-    url("./../fonts/Galatea-Light.woff2") format("woff2"),
-    url("./../fonts/Galatea-Light.woff") format("woff"),
-    url("./../fonts/Galatea-Light.ttf") format("truetype");
+  font-family: "BreweryNo2W06";
+  src: url("BreweryNo2W06-Light.eot");
+  src: url("BreweryNo2W06-Light.eot?#iefix") format("embedded-opentype"),
+    url("BreweryNo2W06-Light.woff2") format("woff2"),
+    url("BreweryNo2W06-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: "Galatea";
-  src: local("Galatea Regular"), local("Galatea-Regular"),
-    url("./../fonts/Galatea-Regular.woff2") format("woff2"),
-    url("./../fonts/Galatea-Regular.woff") format("woff"),
-    url("./../fonts/Galatea-Regular.ttf") format("truetype");
+  font-family: "BreweryNo2W06";
+  src: url("BreweryNo2W06-Regular.eot");
+  src: url("BreweryNo2W06-Regular.eot?#iefix") format("embedded-opentype"),
+    url("BreweryNo2W06-Regular.woff2") format("woff2"),
+    url("BreweryNo2W06-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: "BreweryNo2W06";
+  src: url("BreweryNo2W06-Medium.eot");
+  src: url("BreweryNo2W06-Medium.eot?#iefix") format("embedded-opentype"),
+    url("BreweryNo2W06-Medium.woff2") format("woff2"),
+    url("BreweryNo2W06-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BreweryNo2W06";
+  src: url("BreweryNo2W06-Bold.eot");
+  src: url("BreweryNo2W06-Bold.eot?#iefix") format("embedded-opentype"),
+    url("BreweryNo2W06-Bold.woff2") format("woff2"),
+    url("BreweryNo2W06-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BreweryNo2W06-XBold";
+  src: url("BreweryNo2W06-XBold.eot");
+  src: url("BreweryNo2W06-XBold.eot?#iefix") format("embedded-opentype"),
+    url("BreweryNo2W06-XBold.woff2") format("woff2"),
+    url("BreweryNo2W06-XBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BreweryNo2W06";
+  src: url("BreweryNo2W06-Heavy.eot");
+  src: url("BreweryNo2W06-Heavy.eot?#iefix") format("embedded-opentype"),
+    url("BreweryNo2W06-Heavy.woff2") format("woff2"),
+    url("BreweryNo2W06-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: "BreweryNo2W06";
+  src: url("BreweryNo2W06-Black.eot");
+  src: url("BreweryNo2W06-Black.eot?#iefix") format("embedded-opentype"),
+    url("BreweryNo2W06-Black.woff2") format("woff2"),
+    url("BreweryNo2W06-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+} */
 
 /* Общие стили сброс */
 * {
@@ -51,7 +79,7 @@ body {
 }
 
 body {
-  font-family: "Galatea", Arial, Helvetica, sans-serif;
+  font-family: "BreweryNo2W06", Arial, Helvetica, sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -328,6 +356,7 @@ a {
   font-size: calc((100vw - 360px) / (1726 - 360) * (22 - 12) + 12px);
   transition: 0.3s;
   line-height: 35px;
+  cursor: pointer;
 }
 .prev-slide--active {
   opacity: 1;
@@ -342,6 +371,7 @@ a {
   opacity: 0.7;
   transition: 0.3s;
   line-height: 35px;
+  cursor: pointer;
 }
 .next-slide--active {
   opacity: 1;
@@ -437,6 +467,15 @@ a {
   transition: 0.2s;
 }
 
+.section_nav-item:hover {
+  background-color: #ecbc95;
+  color: black;
+}
+.section_nav-item:active {
+  background-color: #614f40;
+  color: black;
+}
+
 .section_nav-item:not(:last-child) {
   border-bottom: 1px solid #ad8361;
 }
@@ -477,6 +516,6 @@ a {
   /* font-size: 16px; */
   font-size: calc((100vw - 360px) / (1726 - 360) * (16 - 8) + 8px);
   line-height: 22px;
-  /* opacity: 0.9; */
+  opacity: 0.7;
   font-weight: 100;
 }
